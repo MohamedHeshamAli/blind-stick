@@ -4,8 +4,6 @@ int servoPin = 9;
 Servo servo; 
 const int trigPin = 2;
 const int echoPin = 3;
-
-
 void setup() {
   servo.attach(servoPin);
   pinMode(trigPin, OUTPUT); 
@@ -13,8 +11,7 @@ void setup() {
   Serial.begin(9600);
 }
 
-void loop() {
-  
+void loop() { 
   int waterLevel = analogRead(A0);
   if(waterLevel>500){
     Serial.println("watch out from water");
