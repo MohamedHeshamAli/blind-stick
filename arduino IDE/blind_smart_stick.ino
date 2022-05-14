@@ -2,7 +2,6 @@
 #include <Servo.h>
 int servoPin = 9;
 Servo servo; 
-byte buzzerPin=13;
 const int trigPin = 2;
 const int echoPin = 3;
 bool canMoveForward=true;
@@ -10,11 +9,9 @@ int val=0;
 
 void setup() {
   servo.attach(servoPin);
- // pinMode(buzzerPin,OUTPUT);
   pinMode(trigPin, OUTPUT); 
   pinMode(echoPin, INPUT); 
   Serial.begin(9600);
-//  bluetooth.begin(9600);
 }
 
 void loop() {
