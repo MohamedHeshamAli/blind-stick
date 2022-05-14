@@ -4,8 +4,7 @@ int servoPin = 9;
 Servo servo; 
 const int trigPin = 2;
 const int echoPin = 3;
-bool canMoveForward=true;
-int val=0;
+
 
 void setup() {
   servo.attach(servoPin);
