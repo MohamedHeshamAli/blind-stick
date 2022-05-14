@@ -1,4 +1,4 @@
-//#include <SoftwareSerial.h>
+
 #include <Servo.h>
 int servoPin = 9;
 Servo servo; 
@@ -8,8 +8,6 @@ const int echoPin = 3;
 bool canMoveForward=true;
 int val=0;
 
-
-//SoftwareSerial bluetooth(0, 1);
 void setup() {
   servo.attach(servoPin);
  // pinMode(buzzerPin,OUTPUT);
@@ -50,7 +48,7 @@ double getDistance(int tri,int echo){
 }
 void findAWay(){
         //( Serial.available() > 0)
-      if( 1){
+      if( Serial.available() > 0){
       Serial.println("stop moving");
       String avilableWaye="";
       servo.write(0);
@@ -76,19 +74,4 @@ void findAWay(){
       delay(3000);
   }
 }
-void testServo(){
-        delay(1000);
-  int forwardDistance= getDistance(trigPin,echoPin);
-  Serial.print("forwardDistance");
-  Serial.println(forwardDistance);
-  
-      servo.write(0);
-      delay(1000);
-      int rightDistance=getDistance(trigPin,echoPin);
-      Serial.print("rightDistance");
-  Serial.println(rightDistance);
-      servo.write(180);
-      delay(1000);
-      int leftDistance=getDistance(trigPin,echoPin);
-  Serial.print("leftDistance");
-  Serial.println(leftDistance);}
+
